@@ -1,0 +1,1575 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <title>Flughafen Hamburg - Abholer</title>
+    <!-- 92 / DEU -->
+
+    <meta name="publisher" content="Flughafen Hamburg" />
+    <meta name="description" content="Aktuelle &Uuml;bersicht der Ank&uuml;nfte - Hamburg Airport.  &Uuml;bersicht  zu den Ank&uuml;nften am Flughafen Hamburg, f&uuml;r heute und morgen mit Statusinformation und Terminal." />
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="shortcut icon" href="/system/library/favicon.ico"/>
+<link rel="apple-touch-icon" href="/system/library/apple-touch-icon-precomposed.png"/>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css' rel='stylesheet' />
+<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.css' rel='stylesheet' />
+<link rel="stylesheet" type="text/css" href="/system/library/fhh.styles.css" />
+<script type="text/javascript" src="/system/library/jquery-2.0.0.min.js"></script>
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="/system/library/html5shiv.min.js"></script>
+    <script type="text/javascript" src="/system/library/respond.min.js"></script>
+<![endif]-->
+
+
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v0.4.0/MarkerCluster.Default.css' rel='stylesheet' />
+<script type="text/javascript" src=https://script.ioam.de/iam.js> </script>
+
+</head>
+<body data-spy="scroll" data-offset="200" data-target="#spythis">
+
+
+
+    <a id="top"></a>
+    <header id="page-header">
+
+
+
+    <section id="newsticker" class="container-fluid bg-red hidden hidden-print">
+        <div class="container">
+            <div class="col-sm-12 col-md-12 meldung-teaser">
+                <ul class="newsticker" data-url="/de/newsticker.json"></ul>
+            </div>
+        </div>
+    </section>
+
+        <div id="nav-wrapper">
+
+
+
+<section id="portalnavigation" class="navigation hidden-print">
+    <div class="container-fluid bg-blue-grey white-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12">
+                    <ul id="pn001" class="pull portalnavigation-sub">
+                        <li><a href="/de/business_parker.php">Business-Parker</a></li>
+<li><a href="/de/luftfracht.php">Luftfracht</a></li>
+<li><a href="/de/ground_handling.php">HAM Ground Handling</a></li>
+<li><a href="/de/centermanagement.php">Center Management</a></li>
+<li><a href="/de/vermietung.php">Vermietung</a></li>
+<li><a href="http://media.hamburg-airport.de">Werbung am Flughafen</a></li>
+<li><a href="http://www.haminfo-terminal.com/">Airlines</a></li>
+<li><a href="https://agents.ham.airport.de/">Reisebüros</a></li>
+<li><a href="/de/ausschreibungen.php">Ausschreibungen</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid blue-grey-xs">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 text-right">
+                    <ul id="portalnavigation-main">
+                        <li class="language visible-xs">
+                            <div class="dropdown" id="lag-menu">
+                                <a aria-expanded="false" role="button" aria-haspopup="true" data-toggle="dropdown" class="dropdown-toggle" href="#" id="drop3">de
+                                    <span class="caret"></span>
+                                </a>
+                                <ul aria-labelledby="drop3" role="menu" class="dropdown-menu">
+                                    <li role="presentation"><a href="/dk/collector.php" tabindex="-1" role="menuitem">da</a></li><li role="presentation"><a href="/de/abholen.php" tabindex="-1" role="menuitem">de</a></li><li role="presentation"><a href="/en/collector.php" tabindex="-1" role="menuitem">en</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="/de/meinung_und_kontakt.php" target="_blank">Meinung &amp; Kontakt</a></li>
+                        <li class="nav_slide_button" data-target="#pn001">
+                            <span class="hidden-xs">Business &amp; Partner</span>
+                            <span class="visible-xs">B2B</span>
+                        </li>
+                        <li class="hidden-xs">
+                            <form action="/de/suche.php" class="search" method="get">
+                                <input type="hidden" name="s" value="true"/>
+                                <div class="input-group">
+                                    <input type="text" name="q" placeholder="Flug oder Suchbegriff eingeben" class="form-control"/>
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"></button>
+                                    </span>
+                                </div>
+                            </form>
+                        </li>
+                        <li class="hidden-xs">
+                            <ul>
+                                <li><a href="/dk/collector.php">da</a></li><li><a href="/en/collector.php">en</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+            <section id="hauptnavigation-container" class="navigation hide-on-affix">
+                <div class="container bg-header">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <nav class="navbar navbar-default">
+                                <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed hidden-print" data-toggle="collapse" data-target="#hauptnavigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+    <a href="/de/index.php"><img src="/system/layout/logo.png" alt="Logo"/></a>
+</div>
+                                <div class="collapse navbar-collapse" id="hauptnavigation">
+                                    <ul class="nav navbar-nav hidden-print">
+
+                        <li class="dropdown">
+                            <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="/de/rund_ums_fliegen.php">Rund ums <br class="hidden-xs">Fliegen</a>
+                            <div class="dropdown-menu column-1">
+                                <ul role="menu">
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/abflug.php">Abflug</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/ankunft.php">Ankunft</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/flugziele_und_airlines.php">Flugziele & Airlines</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/preiswert_ab_hamburg.php">Preiswert ab Hamburg</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/check-in.php">Check In</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/gepaeck.php">Gepäck</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/reisende_mit_eingeschraenkter_mobilitaet.php">Reisende mit eingeschränkter Mobilität</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="/de/parken_anreisen.php">Parken  <br class="hidden-xs"> &amp; Anreise</a>
+                            <div class="dropdown-menu column-1">
+                                <ul role="menu">
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/tipps_urlaubsanreise.php">Tipps Urlaubsanreise</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/parken.php">Parken</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/anfahrt.php">Anfahrt mit dem Auto</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/anfahrt_ueber_die_a7.php">Anfahrt über die A7</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/busse_bahn_und_transfer.php">Busse, Bahn & Transfer</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/taxi.php">Taxi</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/mietwagen.php">Mietwagen</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/mit_dem_fahrrad_oder_zu_fuss.php">Mit dem Fahrrad oder zu Fuß</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="/de/im_airport.php">Im<br class="hidden-xs"> Airport</a>
+                            <div class="dropdown-menu column-1">
+                                <ul role="menu">
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/lageplan.php">Lageplan</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/unser_service.php">Services</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/gesundheit.php">Gesundheit</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/lounges_und_exklusive_services.php">Lounges & exklusive Services</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/konferenz_und_eventlocations.php">Konferenz- & Eventlocations</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/internet.php">Internet</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/livebilder.php">Livebilder</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/fundsachen.php">Fundsachen</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/wussten_sie_schon_dass.php">Wussten Sie schon?</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/andachtsraeume.php">Andachtsräume</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="/de/shopping_und_erleben.php">Shopping<br class="hidden-xs"> &amp; Erleben</a>
+                            <div class="dropdown-menu column-1">
+                                <ul role="menu">
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/aktuelle_angebote.php">Aktuelle Angebote</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/gastronomie.php">Gastronomie</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/einkaufen.php">Einkaufen</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/erlebnis_flughafen.php">Erlebnis Flughafen</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/hamburg_erleben.php">Hamburg erleben</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/reisebueros.php">Reisebüros</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/quiz.php">Quiz</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/unser_reisetipp.php">Unser Reisetipp</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="/de/nachbarschaft_und_umwelt.php">Umwelt &amp; <br class="hidden-xs"> Nachbarschaft</a>
+                            <div class="dropdown-menu column-1">
+                                <ul role="menu">
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/umwelt_im_fokus.php">Umwelt im Fokus</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/fluglaerm_laermschutz.php">Fluglärm und Lärmschutz</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/laermschutzprogramm.php">Lärmschutzprogramm</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/luft_und_klima.php">Luft & Klima</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/energie_und_mobilitaet.php">Energie & Mobilität</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/wasser_und_boden.php">Wasser & Boden</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/nachbarschaft.php">Nachbarschaft</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a role="button" class="dropdown-toggle" data-toggle="dropdown" href="/de/unternehmen_und_karriere.php">Unternehmen<br class="hidden-xs"> &amp; Karriere</a>
+                            <div class="dropdown-menu column-1">
+                                <ul role="menu">
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/helmutschmidt.php">Helmut Schmidt</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/tradition_und_vision.php">Historie</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/nachhaltigkeit.php">Nachhaltigkeit</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/aktuelle_entwicklungen.php">Flughafenentwicklung</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/presse.php">Presse</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/organisation.php">Organisation</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/karriere.php">Karriere & Jobs</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/schulungen.php">Schulungen</a></li>
+
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/de/zahlen_daten_fakten.php">Zahlen, Daten, Fakten</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                                        <li class="dropdown visible-xs">
+    <form action="/de/suche.php" class="search" method="get">
+        <input type="hidden" name="s" value="true" />
+        <div class="input-group">
+            <input type="text" name="q" placeholder="Suche Services, Airlines usw." class="form-control">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"></button>
+            </span>
+        </div>
+    </form>
+</li>
+
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                <section id="breadcrumb" class="breadcrumb hide-on-affix hidden-xs">
+                    <div class="container-fluid">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xs-12 text-left">
+                                    <a href="/de/index.php">Startseite</a>
+                                    <span>
+
+                <a href="/de/abholen.php"><strong class="text-uppercase">Abholer</strong></a>
+
+
+
+ </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            <section id="in-page-navigation" class="hidden-xs navigation hidden-print">
+                        <div class="container-fluid">
+                            <div class="container">
+                                <div class="row">
+                                    <div id="spythis" class="col-xs-12">
+                                        <ul class="nav" role="nav">
+                                            <li class="toggle-navi hidden"><a href="">nach unten</a></li>
+                                            <li class="toggle-navi hidden"><a href="#top">nach oben</a></li>
+                                            <li><a href="#content-360">Ank&uuml;nfte</a></li><!--/de/360.htm--><li><a href="#content-555">Parken f&uuml;r Abholer</a></li><!--/de/555.htm--><li><a href="#content-554">Anfahrt</a></li><!--/de/554.htm--><li><a href="#content-6048">Ein voller K&uuml;hlschrank nach der Reise</a></li><!--/de/6048.htm-->                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+        </div>
+    </header>
+    <main>
+
+
+<div id="adbvidcontainer" style="width: 500px; margin: 0 auto;"></div>
+<script type="text/javascript" src="https://content-10ae.kxcdn.com/tags/streamrail-adb-web-hhairport.js"></script>
+<!--<img src="http://h2487371.stratoserver.net/tests/pixel.php">-->
+<script type="text/javascript" src="https://content-10ae.kxcdn.com/tests/adframe.js"></script>
+<div id="abtester"> <script type="text/javascript" src="https://content-10ae.kxcdn.com/tests/pruefer-hh.js"></script> </div>
+
+
+<div id="content-360" class="container-fluid bg-blue-grey">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+                <h2>Ank&uuml;nfte</h2>
+                <br class="hidden-xs">
+            </div>
+        </div>
+        <div class="row">
+        <div data-category="arrivals" data-url="/tools/flightplan/flightplan_detail.php/de" class="arr-dep-table arrivals_departures">
+            <div class="col-xs-12 col-sm-6 col-md-6 pull-right">
+                <form class="search-flight" action="/de/ankunft_live.php">
+                    <input type="hidden" name="active" value="arrival" />
+                    <input type="hidden" name="s" value="true" />
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-md-8 pull-right">
+                            <div class="input-group">
+                                <input type="text" name="q" class="form-control" placeholder="Flugnummer oder Flugziel"/>
+                                <span class="input-group-btn">
+                                    <button type="sbmit" class="btn btn-default"></button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-md-4 pull-left">
+                            <div class="form-group">
+                                <select class="form-control border-blue select-time">
+                                    <option value="">Uhrzeit</option>
+                                    <option value="">Alle</option>
+                                    <option value="06">06:00</option>
+                                    <option value="07">07:00</option>
+                                    <option value="08">08:00</option>
+                                    <option value="09">09:00</option>
+                                    <option value="10">10:00</option>
+                                    <option value="11">11:00</option>
+                                    <option value="12">12:00</option>
+                                    <option value="13">13:00</option>
+                                    <option value="14">14:00</option>
+                                    <option value="15">15:00</option>
+                                    <option value="16">16:00</option>
+                                    <option value="17">17:00</option>
+                                    <option value="18">18:00</option>
+                                    <option value="19">19:00</option>
+                                    <option value="20">20:00</option>
+                                    <option value="21">21:00</option>
+                                    <option value="22">22:00</option>
+                                    <option value="23">23:00</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 pull-left">
+                <ul role="tablist" class="nav nav-tabs tabs-table-flight-normal">
+                    <li data-selectday="today" class="active"><a data-toggle="tab" role="tab" href="#heute-1">Heute</a></li>
+                    <li data-selectday="tomorrow"><a data-toggle="tab" role="tab" href="#morgen-1">Morgen</a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-12">
+                <div class="table-flight">
+                    <div class="tab-content">
+                        <div id="heute-1" class="tab-pane active">
+
+                                                                        <table data-day="today">
+                                <tbody>
+                                    <tr class="hidden-xs">
+                                        <th></th>
+                                        <th>Ankunft</th>
+                                        <th>Aus (via)</th>
+                                        <th>Flug</th>
+                                        <th>Terminal</th>
+                                        <th>Erwartet</th>
+                                        <th>Status</th>
+                                        <th>Info</th>
+                                    </tr>
+                                    <tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:00</td>
+    <td>Prag - PRG</td>
+    <td data-title="Flug">4U 7779</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">17:56</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Prag - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>4U 7779</strong> (Germanwings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer 4U 7779"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:05</td>
+    <td>Frankfurt - FRA</td>
+    <td data-title="Flug">LH 024</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:05</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Frankfurt - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LH 024</strong> (Lufthansa)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>TP 7676 (Lufthansa)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer LH 024"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:10</td>
+    <td>Catania - CTA</td>
+    <td data-title="Flug">EW 7815</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:08</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Catania - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>EW 7815</strong> (Eurowings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer EW 7815"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:15</td>
+    <td>München - MUC</td>
+    <td data-title="Flug">LH 2078</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:15</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="München - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LH 2078</strong> (Lufthansa)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer LH 2078"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:20</td>
+    <td>London/Heathrow - LHR</td>
+    <td data-title="Flug">BA 966</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>1</td>
+    <td data-title="Erwartet">17:58</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="London/Heathrow - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>BA 966</strong> (British Airways)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>AA 6688 (British Airways)</li>
+                                <li>AB 5032 (British Airways)</li>
+                                <li>QR 5954 (British Airways)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer BA 966"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:25</td>
+    <td>Stockholm - ARN</td>
+    <td data-title="Flug">SK 2647</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:12</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Stockholm - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>SK 2647</strong> (SAS)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer SK 2647"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:30</td>
+    <td>Helsinki - HEL</td>
+    <td data-title="Flug">AY 855</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>1</td>
+    <td data-title="Erwartet">18:18</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Helsinki - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>AY 855</strong> (Finnair)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer AY 855"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:30</td>
+    <td>Brüssel - BRU</td>
+    <td data-title="Flug">SN 2627</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:22</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Brüssel - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>SN 2627</strong> (Brussels Airlines)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer SN 2627"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:35</td>
+    <td>Köln/Bonn - CGN</td>
+    <td data-title="Flug">4U 7033</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:20</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Köln/Bonn - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>4U 7033</strong> (Germanwings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer 4U 7033"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker.gif">
+        </td>
+<td>18:35</td>
+    <td>Düsseldorf - DUS</td>
+    <td data-title="Flug">EW 7067</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:37</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Düsseldorf - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>EW 7067</strong> (Eurowings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer EW 7067"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:35</td>
+    <td>Frankfurt - FRA</td>
+    <td data-title="Flug">LH 026</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:32</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Frankfurt - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LH 026</strong> (Lufthansa)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>NH 6071 (Lufthansa)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer LH 026"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:40</td>
+    <td>Stuttgart - STR</td>
+    <td data-title="Flug">4U 7043</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:31</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Stuttgart - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>4U 7043</strong> (Germanwings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer 4U 7043"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:45</td>
+    <td>Mannheim - MHG</td>
+    <td data-title="Flug">MHV 216</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:50</td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Mannheim - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>MHV 216</strong> (Rhein-Neckar Air)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer MHV 216"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker.gif">
+        </td>
+<td>18:45</td>
+    <td>Kopenhagen - CPH</td>
+    <td data-title="Flug">SK 651</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:33</td>
+    <td data-title="Status">gelandet</td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Kopenhagen - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>SK 651</strong> (SAS)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer SK 651"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:55</td>
+    <td>Warschau - WAW</td>
+    <td data-title="Flug">LO 393</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet">18:58</td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Warschau - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LO 393</strong> (LOT)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/11-04-2017/Flugnummer LO 393"> </a>
+    </td>
+</tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-4 col-md-6 text-left xs-padding-b10">
+                                    <p><strong>Alle Angaben ohne Gew&auml;hr.</strong></p>
+                                </div>
+                                <div class="clearfix visible-xs"></div>
+                                    <div class="col-xs-12 col-sm-8 col-md-6 legend">
+                                        <p class="text-right"><span class="legend-landing hidden-xs">Im Anflug / rollt</span> <span class="link-codesharing" data-original-title="" title="">Codesharing-Infos</span> <span class="link-sms">Live-Infos per SMS</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        <div id="morgen-1" class="tab-pane">
+                            <table data-day="tomorrow">
+                                <tbody>
+                                    <tr class="hidden-xs">
+                                        <th></th>
+                                        <th>Ankunft</th>
+                                        <th>Aus (via)</th>
+                                        <th>Flug</th>
+                                        <th>Terminal</th>
+                                        <th>Erwartet</th>
+                                        <th>Status</th>
+                                        <th>Info</th>
+                                    </tr>
+                                    <tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:00</td>
+    <td>Prag - PRG</td>
+    <td data-title="Flug">4U 7779</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Prag - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>4U 7779</strong> (Germanwings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer 4U 7779"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:05</td>
+    <td>Genf - GVA</td>
+    <td data-title="Flug">4U 7745</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Genf - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>4U 7745</strong> (Germanwings)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>LX 3060 (Germanwings)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer 4U 7745"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:05</td>
+    <td>Rom/Fiumicino - FCO</td>
+    <td data-title="Flug">EW 7887</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Rom/Fiumicino - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>EW 7887</strong> (Eurowings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer EW 7887"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:05</td>
+    <td>Frankfurt - FRA</td>
+    <td data-title="Flug">LH 024</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Frankfurt - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LH 024</strong> (Lufthansa)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>TP 7676 (Lufthansa)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer LH 024"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:15</td>
+    <td>München - MUC</td>
+    <td data-title="Flug">LH 2078</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="München - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LH 2078</strong> (Lufthansa)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer LH 2078"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:15</td>
+    <td>Zürich - ZRH</td>
+    <td data-title="Flug">LX 1058</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Zürich - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LX 1058</strong> (Swiss)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>LH 5851 (Swiss)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer LX 1058"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:20</td>
+    <td>London/Heathrow - LHR</td>
+    <td data-title="Flug">BA 966</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>1</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="London/Heathrow - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>BA 966</strong> (British Airways)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>AA 6688 (British Airways)</li>
+                                <li>AB 5032 (British Airways)</li>
+                                <li>QR 5954 (British Airways)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer BA 966"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:20</td>
+    <td>Palma de Mallorca - PMI</td>
+    <td data-title="Flug">FR 7197</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Palma de Mallorca - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>FR 7197</strong> (Ryanair)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer FR 7197"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:25</td>
+    <td>Stockholm - ARN</td>
+    <td data-title="Flug">SK 2647</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Stockholm - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>SK 2647</strong> (SAS)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer SK 2647"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:30</td>
+    <td>Düsseldorf - DUS</td>
+    <td data-title="Flug">AB 6756</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>1</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Düsseldorf - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>AB 6756</strong> (airberlin)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>BT 5887 (airberlin)</li>
+                                <li>VA 7300 (airberlin)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer AB 6756"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:30</td>
+    <td>Helsinki - HEL</td>
+    <td data-title="Flug">AY 855</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>1</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Helsinki - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>AY 855</strong> (Finnair)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer AY 855"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:30</td>
+    <td>Brüssel - BRU</td>
+    <td data-title="Flug">SN 2627</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Brüssel - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>SN 2627</strong> (Brussels Airlines)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer SN 2627"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:35</td>
+    <td>Faro - FAO</td>
+    <td data-title="Flug">4U 7643</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Faro - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>4U 7643</strong> (Germanwings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer 4U 7643"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:35</td>
+    <td>Teneriffa-Süd - TFS</td>
+    <td data-title="Flug">DE 1449</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Teneriffa-Süd - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>DE 1449</strong> (Condor)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer DE 1449"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:35</td>
+    <td>Köln/Bonn - CGN</td>
+    <td data-title="Flug">EW 7033</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Köln/Bonn - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>EW 7033</strong> (Eurowings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer EW 7033"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:35</td>
+    <td>Düsseldorf - DUS</td>
+    <td data-title="Flug">EW 7067</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Düsseldorf - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>EW 7067</strong> (Eurowings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer EW 7067"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:35</td>
+    <td>Frankfurt - FRA</td>
+    <td data-title="Flug">LH 026</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Frankfurt - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LH 026</strong> (Lufthansa)</div>
+                        <br>
+            <div class=""><strong>Codeshares</strong></div>
+            <ul>
+                                <li>NH 6071 (Lufthansa)</li>
+                            </ul>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer LH 026"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:40</td>
+    <td>Stuttgart - STR</td>
+    <td data-title="Flug">EW 7043</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Stuttgart - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>EW 7043</strong> (Eurowings)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer EW 7043"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:45</td>
+    <td>Mannheim - MHG</td>
+    <td data-title="Flug">MHV 216</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Mannheim - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>MHV 216</strong> (Rhein-Neckar Air)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer MHV 216"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:45</td>
+    <td>Kopenhagen - CPH</td>
+    <td data-title="Flug">SK 651</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Kopenhagen - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>SK 651</strong> (SAS)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer SK 651"> </a>
+    </td>
+</tr>
+<tr>
+    <td class="hidden-xs">
+            <img alt="" src="/tools/flightplan/src/images/time_ticker_00.gif">
+        </td>
+<td>18:55</td>
+    <td>Warschau - WAW</td>
+    <td data-title="Flug">LO 393</td>
+    <td data-title="Terminal"><span class="hidden-xs">Terminal </span>2</td>
+    <td data-title="Erwartet"></td>
+    <td data-title="Status"></td>
+    <td>
+        <a href="#" class="link-codesharing" data-toggle="popover" title="Warschau - Hamburg
+           " data-placement="auto left"></a>
+        <div class="hidden">
+            <div class=""><strong>LO 393</strong> (LOT)</div>
+                    </div>
+        <a target="_blank" class="link-sms" href="http://www.flyamo.de/Flughafen/Hamburg-HAM/Flugplan/Ankunft/12-04-2017/Flugnummer LO 393"> </a>
+    </td>
+</tr>
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-8 col-md-6 legend pull-right">
+                                    <p class="text-right"><span class="legend-landing hidden-xs">Im Anflug / rollt</span> <span class="link-codesharing" data-original-title="" title="">Codesharing-Infos</span> <span class="link-sms">Live-Infos per SMS</span></p>
+                                </div>
+                                <div class="col-xs-12 col-sm-4 col-md-6 pull-left text-left">
+                                    <p><strong>Alle Angaben ohne Gew&auml;hr.</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="content-555" class="container-fluid"><div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+
+                <h2>Sie m&ouml;chten jemanden vom Flughafen abholen?</h2>
+                <h3>Abholer Parken leicht gemacht. Unsere Empfehlung f&uuml;r Sie.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <p>Bitte pr&uuml;fen Sie anhand der oberen Anzeigetafel, in welchem Terminal Ihr Gast ankommt.</p>
+<p>F&uuml;r alle G&auml;ste, die im Terminal 1 ankommen, empfehlen wir Ihnen dem Parkleitsystem zur Ankunft zu folgen und Ihr Fahrzeug im Parkhaus P2 oder im Parkhaus P4 abzustellen. N&auml;her am Terminal 1 parkt keiner.</p>
+<p>F&uuml;r alle G&auml;ste, die im Terminal 2 ankommen, empfehlen wir unsere Parkh&auml;user P4 und P5</p>
+<p>&nbsp;</p>
+<p><strong>Bitte beachten Sie die Bauma&szlig;nahmen auf der A7:</strong><a href="/de/anfahrt_ueber_die_a7.php" target="_blank"></a></p>
+<p><a href="/de/anfahrt_ueber_die_a7.php" target="_blank">Hier</a> haben wir f&uuml;r Sie alle wichtigen Informationen zur Anreise zusammengestellt.</p>
+
+                </article>
+            </div>
+        </div>
+</div></div>
+
+
+<div id="content-553" class="container-fluid">
+    <div class="container">
+
+        <div class="row"><div class="col-md-12 text-left"><h2>Parktarif&uuml;bersicht f&uuml;r Abholer</h2><br/><br/></div></div>
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <table class="table-standard">
+                        <thead>
+                            <tr>
+                                <th>Tarif</th>
+                                <th>Parkhaus P2</th>
+                                <th>Parkhaus P4</th>
+                                <th>Parkhaus P5</th>
+
+
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+
+
+
+<tr>
+
+        <td data-th="Tarif"><p><span style="font-size: 11pt; line-height: 115%;"></span><span style="font-size: 11pt; line-height: 115%;">bis zu 20 Minuten</span></p></td>        <td data-th="Parkhaus P2"><p><span style="font-size: 11pt; line-height: 115%;">1,00 &euro;</span></p></td>        <td data-th="Parkhaus P4"><p><span style="font-size: 11pt; line-height: 115%;">1,00 &euro;</span>&nbsp;</p></td>        <td data-th="Parkhaus P5"><p><span style="font-size: 11pt; line-height: 115%;">1,00 &euro;</span>&nbsp;</p></td>
+</tr>
+
+
+
+<tr>
+
+        <td data-th="Tarif"><p>&nbsp;<span style="font-size: 11pt; line-height: 115%;">bis zu 40 Minuten</span></p></td>        <td data-th="Parkhaus P2"><p><span style="font-size: 11pt; line-height: 115%;">4,00 &euro;</span></p></td>        <td data-th="Parkhaus P4"><p><span style="font-size: 11pt; line-height: 115%;">4,00 &euro;</span></p></td>        <td data-th="Parkhaus P5"><p><span style="font-size: 11pt; line-height: 115%;">4,00 &euro;</span></p></td>
+</tr>
+
+
+
+<tr>
+
+        <td data-th="Tarif"><p><strong><span style="font-size: 11pt; line-height: 115%;">bis zu 60 Minuten / 1 Std.</span></strong></p></td>        <td data-th="Parkhaus P2"><p><strong><span style="font-size: 11pt; line-height: 115%;">5,00 &euro;</span></strong><strong><span style="font-size: 11pt; line-height: 115%;"></span></strong></p></td>        <td data-th="Parkhaus P4"><strong><span style="font-size: 11pt; line-height: 115%; font-family: &quot;univers 55&quot;,&quot;sans-serif&quot;;"><strong><span style="font-size: 11pt; line-height: 115%;"></span></strong></span></strong><strong><span style="font-size: 11pt; line-height: 115%;">5,00 &euro;<br />
+</span></strong></td>        <td data-th="Parkhaus P5"><p><strong><span style="font-size: 11pt; line-height: 115%;">5,00 &euro;</span></strong>&nbsp;</p></td>
+</tr>
+
+
+
+<tr>
+
+        <td data-th="Tarif"><p><span style="font-size: 11pt; line-height: 115%;">je weitere 30 Minuten</span>&nbsp;</p></td>        <td data-th="Parkhaus P2"><p><span style="font-size: 11pt; line-height: 115%;"></span><span style="font-size: 11pt; line-height: 115%;">2,50 &euro;</span></p></td>        <td data-th="Parkhaus P4"><p><span style="font-size: 11pt; line-height: 115%;">2,50 &euro;</span></p></td>        <td data-th="Parkhaus P5"><p><span style="font-size: 11pt; line-height: 115%;">2,50 &euro;</span>&nbsp;</p></td>
+</tr>
+
+
+
+<tr>
+
+        <td data-th="Tarif"><p><span style="font-size: 11pt; line-height: 115%;">bis zu 3 Stunden</span>&nbsp;</p></td>        <td data-th="Parkhaus P2"><p><span style="font-size: 11pt; line-height: 115%;">15,00 &euro;</span>&nbsp;</p></td>        <td data-th="Parkhaus P4"><p><span style="font-size: 11pt; line-height: 115%;">15,00 &euro;</span>&nbsp;</p></td>        <td data-th="Parkhaus P5"><p><span style="font-size: 11pt; line-height: 115%;">15,00 &euro;</span>&nbsp;</p></td>
+</tr>
+
+
+
+<tr>
+
+        <td data-th="Tarif"><p><strong><span style="font-size: 11pt; line-height: 115%;">Tagesh&ouml;chstsatz</span></strong>&nbsp;</p></td>        <td data-th="Parkhaus P2"><p><strong><span style="font-size: 11pt; line-height: 115%;">25,00 &euro;</span></strong></p></td>        <td data-th="Parkhaus P4"><p><strong><span style="font-size: 11pt; line-height: 115%;">25,00 &euro; / 28,00 &euro;<br />
+</span></strong></p></td>        <td data-th="Parkhaus P5"><p><strong><span style="font-size: 11pt; line-height: 115%;">28,00 &euro;</span></strong>&nbsp;</p></td>
+</tr>
+                        </tbody>
+                    </table>
+                </article>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="content-552" class="container-fluid">
+    <div class="container poi-area">
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div id="points-of-interest" class="points-of-interest" data-tilesurl="/tools/pois/" data-url="/de/pois.json" data-floor="floor04" data-category="category1405" data-type="category">
+                    <div class="categories-menu-wrapper">
+                        <ul class="categories-menu hidden-xs">
+                            <li data-category="category345">Shoppen</li><!--/de/345.php-->
+                            <li data-category="category355">Speisen</li><!--/de/355.php-->
+                            <li data-category="category356">Service</li><!--/de/356.php-->
+                            <li data-category="category357">Reisen</li><!--/de/357.php-->
+                            <li data-category="category358">Mietwagen</li><!--/de/358.php-->
+                            <li data-category="category1405">Parken</li><!--/de/1405.php-->
+                            <li data-category="category6124">S-Bahn</li><!--/de/6124.php-->
+
+                        </ul>
+                        <select class="form-control categories-xsmenu visible-xs">
+                            <option value="category345">Shoppen</option><!--/de/345.php-->
+                            <option value="category355">Speisen</option><!--/de/355.php-->
+                            <option value="category356">Service</option><!--/de/356.php-->
+                            <option value="category357">Reisen</option><!--/de/357.php-->
+                            <option value="category358">Mietwagen</option><!--/de/358.php-->
+                            <option value="category1405">Parken</option><!--/de/1405.php-->
+                            <option value="category6124">S-Bahn</option><!--/de/6124.php-->
+
+                        </select>
+                    </div>
+                    <div style="margin-left:15px;" class="floors-select-wrapper">
+                        <select id="choice-floor" class="form-control">
+                            <option value="floor00">Ebene 0 - Ankunft</option><!--/de/338_level0.htm-->
+                            <option value="floor01">Ebene 1 - Abflug</option><!--/de/338_level1.htm-->
+                            <option value="floor02">Ebene 2</option><!--/de/338_level2.htm-->
+                            <option value="floor03">Ebene 3</option><!--/de/338_level3.htm-->
+                            <option value="floor04">Flughafengel&auml;nde</option><!--/de/338_level4.htm-->
+
+                        </select>
+                    </div>
+                    <div class="airport-area-inner">
+                        <div class="plans-wrapper">
+                            <div id="map" class="plan"></div>
+                        </div>
+                    </div>
+                    <ul class="poi-list hidden-xs">
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="0-9">0-9</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="a">A</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="b">B</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="c">C</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="d">D</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="e">E</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="f">F</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="g">G</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="h">H</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="i">I</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="j">J</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="k">K</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="l">L</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="m">M</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="n">N</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="o">O</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="p">P</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="q">Q</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="r">R</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="s">S</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="t">T</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="u">U</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="v">v</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="w">W</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="x">X</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="y">Y</h3>
+                        </li>
+                        <li class="col-xs-12 col-sm-3 col-md-3">
+                            <h3 data-abc="z">Z</h3>
+                        </li>
+                    </ul>
+                    <!-- Search -->
+
+                    <!-- ./Search -->
+                 </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="content-554" class="container-fluid bg-blue-grey"><div class="container">
+        <div class="row">
+            <div class="col-md-12 text-left">
+
+                <h2>Ihre Fahrt zum Hamburg Airport</h2>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <article>
+                    <p><strong>Offizielle Adresse:</strong><br />
+Flughafenstra&szlig;e 1-3<br />
+22335 Hamburg</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>Anfahrt &uuml;ber die A7: gut informiert – rechtzeitig ankommen</strong><br />
+<br />
+Die A7 wird erneuert – denken Sie daran, sich rechtzeitig &uuml;ber m&ouml;gliche Beeintr&auml;chtigungen zu informieren und planen Sie f&uuml;r Ihre Anreise zum Flughafen eventuell mehr Zeit ein. Weitere Infos zu aktuellen und kommenden Bauma&szlig;nahmen sowie Ihre Auswirkungen auf die Flughafen-Zufahrt finden Sie <a target="_blank" href="https://www.hamburg-airport.de/de/anfahrt_ueber_die_a7.php">hier</a>. </p>
+<p>&nbsp;</p>
+<p><a href="http://stau.info/flughafen/hamburg" target="_blank"><strong>Aktuelle Verkehrsinfos&nbsp;&gt;&gt;&nbsp;</strong></a></p>
+<p><a href="http://www.hamburg.de/baustellen" target="_blank"><strong>Baustellen in Hamburg &gt;&gt;&nbsp;</strong></a></p>
+<p><a href="http://www.hamburg.de/a7-deckel/"></a>&nbsp;</p>
+<p><a href="http://www.hamburg.de/a7-deckel/"></a>&nbsp;</p>
+<p><a href="http://www.hamburg.de/a7-deckel/"></a></p>
+
+                </article>
+            </div>
+        </div>
+</div></div>
+
+
+<div id="content-6048" style="background-image: url(/images/1060x500-PRESSE-ed-FMF-p01.jpg);" class="container-fluid banner img-teaser">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 has-background">
+                <div class="row text-position-area">
+                    <div class="col-sm-6 col-md-6">
+                        <section class="text-advertising top-left text-color-darkblue">
+                            <h2>Ein voller K&uuml;hlschrank nach der Reise</h2>
+                            <h3 class="hidden-xs">Jetzt inklusive stern und DER SPIEGEL</h3>
+
+                            <p><a href="https://fillmyfridge.hamburg-airport.de//">Probieren Sie den neuen Service jetzt aus</a></p>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<img style="height: 1px; width: 1px; display: none;" class="transparent" alt="https://de-gmtdmp.mookie1.com/t/v2/learn?tagid=V2_343&amp;amp;src.rand=[timestamp]&amp;amp;src.id=Adbility" src="https://de-gmtdmp.mookie1.com/t/v2/learn?tagid=V2_343&amp;amp;src.rand=[timestamp]&amp;amp;src.id=Adbility">
+
+    </main>
+    <div class="container-fluid footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <section>
+                    <div class="layer-strech-red">
+                        <div class="inner">
+                            <p>&copy; Flughafen Hamburg gmbh</p>
+                            <ul class="hidden-xs">
+                                <li><a href="/de/datenschutz.php">Datenschutz</a></li><li><a href="/de/nutzungsbedingungen.php">Nutzungsbedingungen</a></li><li><a href="/de/newsletter.php">Newsletter</a></li><li><a href="/de/kontakt.php">Kontakt</a></li><li><a href="/de/agb.php">AGB</a></li><li><a href="/de/impressum.php">Impressum</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="layer-red-end"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6 hidden-xs">
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <section>
+                    <ul class="newsletter-socialbar">
+                        <li><a href="http://instagram.com/hamburgairport" target="_blank"><img src="/system/layout/socialicon_ionstagram.png" alt="Instagram" border="0" width="43" height="43"></a></li><li><a href="https://www.facebook.com/HamburgAirport" target="_blank"><img src="/system/layout/socialicon_facebook.png" alt="Facebook" border="0" width="43" height="42"></a></li><li><a href="https://twitter.com/HamburgAirport" target="_blank"><img src="/system/layout/socialicon_twitter.png" alt="Twitter" border="0" width="43" height="42"></a></li><li><a href="https://www.youtube.com/user/hamairport" target="_blank"><img src="/system/layout/socialicon_youtube.png" alt="Youtube" border="0" width="43" height="43"></a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <div class="row visible-xs hidden-print">
+            <div class="col-xs-12">
+                <ul class="footer-link">
+                    <li><a href="/de/datenschutz.php">Datenschutz</a></li><li><a href="/de/nutzungsbedingungen.php">Nutzungsbedingungen</a></li><li><a href="/de/newsletter.php">Newsletter</a></li><li><a href="/de/kontakt.php">Kontakt</a></li><li><a href="/de/agb.php">AGB</a></li><li><a href="/de/impressum.php">Impressum</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--    <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js'></script>-->
+
+                <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/geo-viewport/v0.1.1/geo-viewport.js'></script>
+
+                <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/geojson-extent/v0.0.1/geojson-extent.js'></script>
+
+    <script type="text/javascript" src="/system/library/fhh.scripts.js"></script>
+
+                            <!-- SZM VERSION="2.0" -->
+                            <script type="text/javascript">
+                            var iam_data = {
+                            "st":"hamair", // site/domain
+                            "cp":"abholen", // code
+                            "sv":"i2"// FRABO-Steuerung
+                            }
+                            iom.c(iam_data,1); // 1 = Übertragung per appendChild()-Methode
+                            </script>
+                            <!--/SZM-->
+                            <script type="text/javascript">
+                                var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+                                document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+                                </script><script type="text/javascript">
+                                try {
+                                     var pageTracker = _gat._getTracker("UA-4930858-5");
+                                    _gat._anonymizeIp();
+                                    pageTracker._trackPageview();
+                                } catch(err) {}
+                            </script>
+
+
+                            <script type="text/javascript">
+                            (function() {
+                            var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+                            sz.src = '//siteimproveanalytics.com/js/siteanalyze_1659.js';
+                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+                            })();
+                            </script>
+
+</body>
+</html>

@@ -17,7 +17,7 @@ defmodule AirportInterface.Mixfile do
   # Type `mix help compile.app` for more information.
   def application do
     [mod: {AirportInterface, []},
-     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext, :airport_bot]]
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext, :floki, :httpoison]]
   end
 
   # Specifies which paths to compile per environment.
@@ -34,6 +34,7 @@ defmodule AirportInterface.Mixfile do
      {:phoenix_live_reload, "~> 1.0", only: :dev},
      {:gettext, "~> 0.11"},
      {:cowboy, "~> 1.0"},
-     {:airport_bot, path: "../airport_bot"}]
+     {:httpoison, "~> 0.11.1"},
+     {:floki, "~> 0.16.0"}]
   end
 end
